@@ -10,29 +10,40 @@
 <link rel="stylesheet" href="/dist/main.min.css">
 </head>
 <body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
   
+  
+<div class="card" id="app">
+  <div class="card__balance">
+    <div class="card__balance__info">
+      <span class="text small white">My balance</span>
+      <h1 class="title mid white">$921.48</h1>
+    </div>
+    
+    <div class="card__logo">
+      <img src="/images/logo.svg" alt="">
+    </div>
+  </div>
+  
+  <div class="card__spending">
+    <h2 class="title mid darker">Spending - Last 7 days</h2>
+    <div class="card__chat"></div>
+    <hr>
+    <div class="card__total">
+      <div>
+        <span class="text small dark">Total this month</span>
+        <h2 class="title darker large">$478.33</h2>
+      </div>
+      <div>
+        <span class="text mid darker">+2.4%</span>
+        <span class="text small dark">from last month</span>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://twitter.com/NonsoMartin06" target="_blank">Nonso Martin</a>.
   </div> -->
   
   <script src="/dist/main.js"></script>
