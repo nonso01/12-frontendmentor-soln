@@ -102,12 +102,6 @@ const app = new Promise((resolve, reject) => {
     }
   })
   
-  // const animate1 = on(loading, {
-  //   animationend(e) {
-  //   this.classList.add("hide")
-  //   card.classList.remove("hide")
-  //   }
-  // })
   
 }).catch(error => log(error.message))
 
