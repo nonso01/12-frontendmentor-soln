@@ -17,6 +17,7 @@ const chartData = [
    balance = 921.48,
    animationTime = 10,
    card = dq(".card"),
+   loading = dq(".loading"),
    cardBalance = dq(".balance"),
    cardTotal = dq(".total"),
    cardChat = dq(".card__chart")
@@ -48,29 +49,36 @@ const app = new Promise((resolve, reject) => {
   spanAmount.className = 'fx dir-col a-cn j-spe amount'
   spanDay.className = "text small dark day"
   
-    spanAmount.innerHTML = `$${data.amount}`   
-    spanDay.textContent = data.day
+  spanAmount.innerHTML = `$${data.amount}`   
+  spanDay.textContent = data.day
     
     
-    const animate0 = setInterval(() => {
-        if(incrementThisNumber < data.height) {
+      
+ const animate0 = on(loading, {
+    animationend(e) {
+      
+     this.classList.add("hide")
+     card.classList.remove("hide")
+     
+  const animate1 = setInterval(() => {
+     if(incrementThisNumber < data.height) {
         incrementThisNumber += 0.1
-    rect.style.setProperty("--calc-height", `${incrementThisNumber}%`)
-
+       rect.style.setProperty("--calc-height", `${incrementThisNumber}%`)
         }
         
-        if(incrementToBalance <= balance) {
-          incrementToBalance += 1
-          cardBalance.textContent = `$${incrementToBalance - 0.52}`
-          
+    if(incrementToBalance <= balance) {
+        incrementToBalance += 1
+        cardBalance.textContent = `$${incrementToBalance - 0.52}`
         }
         
-        if(incrementToTotal <= total) {
-          incrementToTotal += 1
-          cardTotal.textContent = `$${incrementToTotal - 0.67}`
+    if(incrementToTotal <= total) {
+       incrementToTotal += 1
+       cardTotal.textContent = `$${incrementToTotal - 0.67}`
         }
       }, animationTime)
-    
+    }
+  })
+
     
     
     wrapperDiv.append(spanAmount, rect)
@@ -78,7 +86,7 @@ const app = new Promise((resolve, reject) => {
     cardChat.append(chartDiv)
   })
   
-  const computeAmountOffset = on(".rect", {
+  const computeAmountOffset = on('.rect', {
     click() {
      let sibling = this.previousElementSibling
 
@@ -93,6 +101,13 @@ const app = new Promise((resolve, reject) => {
     
     }
   })
+  
+  // const animate1 = on(loading, {
+  //   animationend(e) {
+  //   this.classList.add("hide")
+  //   card.classList.remove("hide")
+  //   }
+  // })
   
 }).catch(error => log(error.message))
 

@@ -1,1 +1,2 @@
-# Frontend Mentor - Expenses chart component
+![Expenses chart](/images/active-states.jpg)
+# FM - Expenses chart component
