@@ -42,15 +42,16 @@ return elements && events ? true : false
 }
 
 
-// {
-// function div(num = 0) {
-//   log(num / 16)
-// }
-// div(10)
-// }
+{
+function div(num = 0) {
+  log(num / 16)
+}
+div(660)
+}
 
 const card = new Promise((resolve, reject) => {
-  
+  const card = dq(".card")
+ 
   
   
 }).catch(error => log(error.message))
