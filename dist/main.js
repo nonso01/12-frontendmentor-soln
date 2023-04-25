@@ -87,7 +87,7 @@ const app = new Promise((resolve, reject) => {
   })
   
   const computeAmountOffset = on('.rect', {
-    click() {
+    pointerover() {
      let sibling = this.previousElementSibling
 
     let itsHeight = parseInt(getComputed(this).height)
