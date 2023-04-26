@@ -49,7 +49,7 @@ const app = new Promise((resolve, reject) => {
   spanAmount.className = 'fx dir-col a-cn j-spe amount'
   spanDay.className = "text small dark day"
   
-  spanAmount.innerHTML = `$${data.amount}`   
+  spanAmount.textContent = `$${data.amount}`   
   spanDay.textContent = data.day
     
     
